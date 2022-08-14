@@ -21,16 +21,20 @@ const character = {
 	]
  }
  
- function getUserСharacteristic(obj) {
+ function getUserСharacteristic(objProperty) {
 	const resultArr = [];
  
-	const specialArr = obj.special;
+	const specialArr = objProperty;
+  // console.log(specialArr);
  
 	specialArr.forEach((item) => {
-	  resultArr.push(item);
-	  // console.log(item);
-	  // const {description = 'Описание недоступно'} = item;
-	  // console.log(item.description);
+    // console.log(item);
+	  // resultArr.push(item);
+
+    //здесь я деструктурирую объекты из массива и назначаю дефолтное значение для description
+	  const {id, name, icon, description = 'Описание недоступно'} = item;
+    //? вопрос, как теперь эти переменные собрать обратно в массив объектов
+	  console.log(id, name, icon, description);
  
 	});
  
@@ -40,7 +44,7 @@ const character = {
 	return resultArr;
  }
  
- getUserСharacteristic(character);
+ getUserСharacteristic(character.special);
  
  // Напишите функцию с аргументом-деструктором, которая извлекает массив с нужными полями (id, name, description, icon) из объекта, а если значения для поля description нет - устанавливает default'ное значение в 'Описание недоступно'. Функция должна возвращать извлечённый массив из объектов с четыремя полями.
  
