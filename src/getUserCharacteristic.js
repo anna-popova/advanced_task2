@@ -10,22 +10,24 @@
 // 	return resultArr;
 // }
 
-export default function getUserСharacteristic(obj) {
+export default function getUserСharacteristic(object) {
   const resultArr = [];
 
-  obj.special.forEach((item) => {
-    const {id, name, icon, description = 'Описание недоступно'} = item;
+  object.special.forEach((item) => {
+    const {
+ id, name, icon, description = 'Описание недоступно',
+} = item;
     // console.log(id, name, icon, description);
-    
+
     const obj = {};
     obj.id = id;
     obj.name = name;
     obj.icon = icon;
     obj.description = description;
     // console.log(obj);
-    
+
     resultArr.push(obj);
   });
-  
+
   return resultArr;
 }

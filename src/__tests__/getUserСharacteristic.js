@@ -22,7 +22,7 @@ test('testing getUserСharacteristic function', () => {
 			},
 		],
 	};
-	const result = getUserСharacteristic(character.special);
+	const result = getUserСharacteristic(character);
 	expect(result).toEqual([
 		{
 			id: 8,
